@@ -1,4 +1,4 @@
-@extends('main_layout')
+@extends('layouts.main_layout')
 
 @section('content')
   <h1>Your Cart</h1>

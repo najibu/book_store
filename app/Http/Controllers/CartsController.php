@@ -47,7 +47,7 @@ class CartsController extends Controller
           'total' => $total
       ));
 
-      return redirect('cart');
+      return redirect('carts.cart');
     }
 
     /**
@@ -66,7 +66,7 @@ class CartsController extends Controller
         return redirect('index')->with('error', 'Your cart is empty');
       }
 
-      return view('cart')
+      return view('carts.cart')
           ->with('cart_books', $cart_books)
           ->with('cart_total', $cart_total);
     }

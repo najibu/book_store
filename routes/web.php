@@ -19,5 +19,4 @@ Route::get('/cart', array('before' => 'auth.basic', 'as' => 'cart', 'uses' => 'C
 
 //Auth
 Auth::routes();
-
 Route::get('/home', 'HomeController@index');
