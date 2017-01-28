@@ -10,7 +10,11 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
 class OrdersController extends Controller
-{
+{ 
+    /**
+     * [postOrder description]
+     * @return [type] [description]
+     */
     public function postOrder()
     {
       $rules = array(
@@ -53,6 +57,10 @@ class OrdersController extends Controller
       return redirect('index')->with('message', 'Your order processed successfully.');
     }
 
+    /**
+     * [getIndex description]
+     * @return [type] [description]
+     */
     public function getIndex()
     {
       $member_id = Auth::user()->id;
