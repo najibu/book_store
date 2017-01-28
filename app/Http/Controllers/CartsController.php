@@ -80,6 +80,6 @@ class CartsController extends Controller
     {
       $cart = Cart::find($id)->delete();
 
-      return redirect('cart');
+      return redirect('carts.cart');
     }
 }

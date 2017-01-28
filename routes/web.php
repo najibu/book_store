@@ -16,6 +16,8 @@ Route::get('/', ['middleware' => 'guest', 'uses' => 'BooksController@getIndex'])
 
 //Cart
 Route::get('/cart', array('before' => 'auth.basic', 'as' => 'cart', 'uses' => 'CartsController@getIndex'));
+Route::post('/cart/add', array('before' => 'auth.basic', 'uses' => 'CartsController@postAddToCart'));
+Route::get('/cart/delete/{id}', array('before' => 'auth.basic', 'as' => 'delete_book_from_cart', 'uses' => 'CartsController@getDelete'));
 
 //Auth
 Auth::routes();
