@@ -11,9 +11,13 @@
 |
 */
 
+//Book
 Route::get('/', ['middleware' => 'guest', 'uses' => 'BooksController@getIndex']);
-Route::get('auth/register', 'AuthAuthController@getRegister');
-Route::post('auth/register', 'AuthAuthController@postRegister');
-Route::get('auth/login', 'AuthAuthController@getLogin');
-Route::post('auth/login', 'AuthAuthController@postLogin');
-Route::get('auth/logout', 'AuthAuthController@getLogout');
+
+//Cart
+Route::get('/cart', array('before' => 'auth.basic', 'as' => 'cart', 'uses' => 'CartsController@getIndex'));
+
+//Auth
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
