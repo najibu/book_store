@@ -36,7 +36,7 @@ class CartsController extends Controller
       $count = Cart::where('book_id', '=', $book_id)->where('member_id', '=', $member_id)->count();
 
       if ($count) {
-        return redirect('index')->with('error', 'The book already in your cart.');
+        return redirect('carts.cart')->with('error', 'The book already in your cart.');
       }
 
       Cart::create(

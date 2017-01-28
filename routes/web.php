@@ -19,6 +19,10 @@ Route::get('/cart', array('before' => 'auth.basic', 'as' => 'cart', 'uses' => 'C
 Route::post('/cart/add', array('before' => 'auth.basic', 'uses' => 'CartsController@postAddToCart'));
 Route::get('/cart/delete/{id}', array('before' => 'auth.basic', 'as' => 'delete_book_from_cart', 'uses' => 'CartsController@getDelete'));
 
+//Order 
+Route::post('/order', array('before' => 'auth.basic', 'uses' => 'OrdersController@postOrder'));
+Route::get('/user/orders', array('before' => 'auth.basic', 'uses' => 'OrdersController@getIndex'));
+
 //Auth
 Auth::routes();
 Route::get('/home', 'HomeController@index');
